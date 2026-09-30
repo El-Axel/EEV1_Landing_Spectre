@@ -1,0 +1,81 @@
+:root {
+    /* Colores */
+    --bosque:        #0D1F17;   /* verde casi negro: fondo base */
+    --bosque-medio:  #163126;   /* un poco más claro: paneles */
+    --musgo:         #6B8F5E;   /* verde musgo: acento principal */
+    --musgo-claro:   #A8C59A;   /* musgo suave: detalles y hover */
+    --ambar:         #E0A94A;   /* dorado de luz de atardecer */
+    --crema:         #F4F1E8;   /* blanco cálido: texto principal */
+    --crema-suave:   rgba(244, 241, 232, 0.72);   /* texto secundario */
+
+    /* Efecto glass */
+    --vidrio-fondo:  rgba(255, 255, 255, 0.07);
+    --vidrio-borde:  rgba(255, 255, 255, 0.16);
+    --vidrio-blur:   16px;
+    --radio:         24px;
+
+    /* Tipografías */
+    --fuente-titulo: "Outfit", sans-serif;
+    --fuente-texto:  "Inter", sans-serif;
+}
+
+
+/* ---------- BASE ---------- */
+html {
+    background-color: var(--bosque);
+    scroll-behavior: smooth;
+}
+
+body {
+    background: transparent;
+    color: var(--crema);
+    font-family: var(--fuente-texto);
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fuente-titulo);
+    font-weight: 600;
+    color: var(--crema);
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.1; }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); line-height: 1.2; }
+
+p { color: var(--crema-suave); }
+
+a { color: var(--ambar); }
+a:hover,
+a:focus,
+a:active { color: var(--musgo-claro); }
+
+::selection {
+    background: var(--musgo);
+    color: var(--crema);
+}
+
+
+/* ---------- FONDO BASE ---------- */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(180deg, rgba(13, 31, 23, 0.55) 0%, rgba(13, 31, 23, 0.88) 100%),
+        url("../img/fondo-bosque.webp") center / cover no-repeat,
+        radial-gradient(circle at 15% 10%, rgba(107, 143, 94, 0.35), transparent 50%),
+        radial-gradient(circle at 85% 75%, rgba(224, 169, 74, 0.18), transparent 45%),
+        var(--bosque);
+}
+
+
+/* ---------- EFECTO GLASS ---------- */
+.vidrio {
+    background: var(--vidrio-fondo);
+    -webkit-backdrop-filter: blur(var(--vidrio-blur));  /* versión para Safari */
+    backdrop-filter: blur(var(--vidrio-blur));
+    border: 1px solid var(--vidrio-borde);
+    border-radius: var(--radio);
+    padding: 1.5rem;
+}
