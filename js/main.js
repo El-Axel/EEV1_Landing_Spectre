@@ -131,3 +131,52 @@ if (puedeAnimar) {
         ease: "outBack",
     });
 }
+
+
+if (puedeAnimar && "IntersectionObserver" in window) {
+
+    const elementos = document.querySelectorAll(".servicios-encabezado, .servicios .column");
+
+    elementos.forEach(function (elemento) {
+        elemento.style.opacity = 0;
+    });
+
+    const observador = new IntersectionObserver(function (entradas) {
+
+        const visibles = entradas
+            .filter(function (entrada) { return entrada.isIntersecting; })
+            .map(function (entrada) { return entrada.target; });
+
+        if (visibles.length === 0) return;
+
+        animate(visibles, {
+            opacity: [0, 1],
+            translateY: [40, 0],
+            duration: 700,
+            delay: stagger(130),
+            ease: "outQuad",
+        });
+
+        visibles.forEach(function (elemento) {
+            observador.unobserve(elemento);
+        });
+
+    }, { threshold: 0.25 });
+
+    elementos.forEach(function (elemento) {
+        observador.observe(elemento);
+    });
+
+    document.querySelectorAll(".servicio").forEach(function (tarjeta) {
+        const icono = tarjeta.querySelector(".servicio-icono");
+
+        tarjeta.addEventListener("mouseenter", function () {
+            animate(icono, {
+                scale: [1, 1.18, 1],
+                rotate: [0, -10, 0],
+                duration: 550,
+                ease: "outQuad",
+            });
+        });
+    });
+}
