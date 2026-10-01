@@ -430,3 +430,52 @@ html { scroll-padding-top: 6rem; }
     border-radius: 14px;
 }
 .reserva .toast .btn-clear { color: var(--crema); }
+
+/* ---------- EXPERIENCIA (comparador día/noche) ---------- */
+.experiencia { padding: 2.5rem 0 2rem; }
+
+.experiencia-encabezado {
+    max-width: 38rem;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+.experiencia-encabezado h2 { margin-bottom: 0.8rem; }
+.experiencia-encabezado p:last-child { font-size: 0.9rem; line-height: 1.7; }
+
+.sobretitulo {
+    margin-bottom: 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ambar);
+}
+
+.marco-comparador {
+    padding: 0.6rem;
+    border-radius: 32px;
+}
+
+.marco-comparador .comparison-slider {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 24px;
+}
+
+.experiencia .comparison-label {
+    padding: 0.2rem 0.8rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--crema);
+    background: rgba(13, 31, 23, 0.6);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-radius: 999px;
+}
+
+.experiencia-notas {
+    margin-top: 1.2rem;
+    row-gap: 0.4rem;
+}
+.experiencia-notas p { margin: 0; font-size: 0.8rem; line-height: 1.6; }
+.experiencia-notas strong { color: var(--crema); }
