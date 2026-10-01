@@ -1,4 +1,8 @@
-// ---------- MENÚ MÓVIL ----------
+const sinMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const puedeAnimar = typeof anime !== "undefined" && !sinMovimiento;
+
+const { animate, stagger } = puedeAnimar ? anime : {};
+
 const botonMenu = document.getElementById("boton-menu");
 const menuMovil = document.getElementById("menu-movil");
 const iconoMenu = botonMenu.querySelector(".icon");
@@ -8,6 +12,10 @@ function cambiarMenu(abrir) {
     botonMenu.setAttribute("aria-expanded", abrir);
     iconoMenu.classList.toggle("icon-menu", !abrir);
     iconoMenu.classList.toggle("icon-cross", abrir);
+
+    if (abrir && puedeAnimar) {
+        animarPanelMovil();
+    }
 }
 
 botonMenu.addEventListener("click", function () {
@@ -56,7 +64,6 @@ campoSalida.addEventListener("change", function () {
     mostrarErrorFechas(false);
 });
 
-// Al enviar
 formulario.addEventListener("submit", function (evento) {
     evento.preventDefault();
     if (campoSalida.value <= campoLlegada.value) {
@@ -74,3 +81,53 @@ formulario.addEventListener("submit", function (evento) {
 botonCerrarAviso.addEventListener("click", function () {
     avisoExito.hidden = true;
 });
+
+function animarPanelMovil() {
+    animate(menuMovil, {
+        opacity: [0, 1],
+        translateY: [-12, 0],
+        duration: 350,
+        ease: "outQuad",
+    });
+
+    animate(menuMovil.querySelectorAll(".nav-item, .btn-block"), {
+        opacity: [0, 1],
+        translateX: [-16, 0],
+        duration: 400,
+        ease: "outQuad",
+        delay: stagger(60, { start: 120 }),
+    });
+}
+
+if (puedeAnimar) {
+    animate(".encabezado .barra", {
+        opacity: [0, 1],
+        translateY: [-24, 0],
+        duration: 700,
+        ease: "outQuad",
+    });
+
+    animate(".encabezado .navbar-brand", {
+        opacity: [0, 1],
+        translateX: [-20, 0],
+        duration: 700,
+        delay: 200,
+        ease: "outQuad",
+    });
+
+    animate(".encabezado .navbar-center .btn-link", {
+        opacity: [0, 1],
+        translateY: [-10, 0],
+        duration: 500,
+        delay: stagger(80, { start: 400 }),
+        ease: "outQuad",
+    });
+
+    animate(".encabezado .navbar-section .btn-primary", {
+        opacity: [0, 1],
+        scale: [0.85, 1],
+        duration: 600,
+        delay: 900,
+        ease: "outBack",
+    });
+}
