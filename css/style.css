@@ -63,7 +63,7 @@ body::before {
     z-index: -1;
     background:
         linear-gradient(180deg, rgba(13, 31, 23, 0.55) 0%, rgba(13, 31, 23, 0.88) 100%),
-        url("../img/fondo-bosque.webp") center / cover no-repeat,
+        url("../img/fondo-bosque.png") center / cover no-repeat,
         radial-gradient(circle at 15% 10%, rgba(107, 143, 94, 0.35), transparent 50%),
         radial-gradient(circle at 85% 75%, rgba(224, 169, 74, 0.18), transparent 45%),
         var(--bosque);
@@ -78,4 +78,104 @@ body::before {
     border: 1px solid var(--vidrio-borde);
     border-radius: var(--radio);
     padding: 1.5rem;
+}
+
+/* ---------- HEADER ---------- */
+
+html { scroll-padding-top: 6rem; }
+
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0.75rem 0;
+}
+
+.encabezado .container { position: relative; }  /* referencia para el panel móvil */
+
+.barra {
+    align-items: center;
+    padding: 0.5rem 0.75rem 0.5rem 1.5rem;
+    border-radius: 999px;                     /* forma de píldora */
+    background: rgba(13, 31, 23, 0.55);       /* vidrio algo más oscuro para leer mejor */
+}
+
+.encabezado .navbar-brand {
+    font-family: var(--fuente-titulo);
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--crema);
+}
+.encabezado .navbar-brand:hover { color: var(--crema); }
+.encabezado .navbar-brand span { color: var(--musgo-claro); }
+
+.encabezado .navbar-center .btn-link {
+    height: auto;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.9rem;
+    color: var(--crema-suave);
+    border-radius: 999px;
+}
+.encabezado .navbar-center .btn-link:hover,
+.encabezado .navbar-center .btn-link:focus {
+    color: var(--crema);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+    text-decoration: none;
+}
+
+.encabezado .btn.btn-primary {
+    height: auto;
+    padding: 0.5rem 1.3rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--bosque);
+    background: var(--crema);
+    border-color: var(--crema);
+    border-radius: 999px;
+}
+.encabezado .btn.btn-primary:hover,
+.encabezado .btn.btn-primary:focus,
+.encabezado .btn.btn-primary:active {
+    color: var(--bosque);
+    background: var(--ambar);
+    border-color: var(--ambar);
+    box-shadow: 0 0 0 0.15rem rgba(224, 169, 74, 0.35);
+}
+
+.encabezado .boton-menu {
+    height: auto;
+    padding: 0.5rem 0.7rem;
+    font-size: 1.1rem;
+    color: var(--crema);
+}
+.encabezado .boton-menu:hover,
+.encabezado .boton-menu:focus {
+    color: var(--ambar);
+    box-shadow: none;
+}
+
+.menu-movil {
+    position: absolute;
+    top: calc(100% + 0.5rem);   /* justo debajo de la barra, con un respiro */
+    left: 0.4rem;
+    right: 0.4rem;
+    padding: 0.75rem;
+    background: rgba(13, 31, 23, 0.82);
+}
+.menu-movil .nav .nav-item a {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    color: var(--crema);
+    border-radius: 12px;
+}
+.menu-movil .nav .nav-item a:hover {
+    color: var(--ambar);
+    background: rgba(255, 255, 255, 0.08);
+}
+.menu-movil .btn-block { margin-top: 0.5rem; }
+
+@media (min-width: 841px) {
+    .menu-movil { display: none !important; }
 }

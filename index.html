@@ -17,20 +17,46 @@
 </head>
 <body>
 
-    <header id="inicio">
-        <a href="#inicio">Casa Nativa</a>
+    <header id="inicio" class="encabezado">
+        <div class="container grid-xl">
 
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#servicios">Experiencia</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#reserva">Reserva</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
+            <div class="navbar vidrio barra">
 
-        <a href="#reserva">Reservar ahora</a>
+                <section class="navbar-section">
+                    <a href="#inicio" class="navbar-brand">Casa <span>Nativa</span></a>
+                </section>
+
+                <nav class="navbar-center hide-md" aria-label="Menú principal">
+                    <a href="#inicio" class="btn btn-link">Inicio</a>
+                    <a href="#experiencia" class="btn btn-link">Experiencia</a>
+                    <a href="#servicios" class="btn btn-link">Servicios</a>
+                    <a href="#reserva" class="btn btn-link">Reserva</a>
+                    <a href="#contacto" class="btn btn-link">Contacto</a>
+                </nav>
+
+                <section class="navbar-section">
+                    <a href="#reserva" class="btn btn-primary hide-md">Reservar ahora</a>
+
+                    <button id="boton-menu" class="btn btn-link boton-menu show-md"
+                            aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil">
+                        <i class="icon icon-menu"></i>
+                    </button>
+                </section>
+
+            </div>
+
+            <nav id="menu-movil" class="menu-movil vidrio" aria-label="Menú móvil" hidden>
+                <ul class="nav">
+                    <li class="nav-item"><a href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a href="#experiencia">Experiencia</a></li>
+                    <li class="nav-item"><a href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a href="#reserva">Reserva</a></li>
+                    <li class="nav-item"><a href="#contacto">Contacto</a></li>
+                </ul>
+                <a href="#reserva" class="btn btn-primary btn-block">Reservar ahora</a>
+            </nav>
+
+        </div>
     </header>
 
     <main>
