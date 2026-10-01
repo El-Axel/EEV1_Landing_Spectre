@@ -223,7 +223,6 @@ html { scroll-padding-top: 6rem; }
     line-height: 1.7;
 }
 
-/* Botones */
 .hero .botones { display: flex; flex-wrap: wrap; gap: 0.8rem; }
 
 .hero .btn {
@@ -268,9 +267,9 @@ html { scroll-padding-top: 6rem; }
     padding: 0.6rem;
     border-radius: 32px;
 }
-.hero .parallax-back img {
-    display: block;
-    border-radius: 24px;
+.hero {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 
@@ -279,4 +278,76 @@ html { scroll-padding-top: 6rem; }
     .parallax-top-right,
     .parallax-bottom-left,
     .parallax-bottom-right { pointer-events: none; }
+}
+
+/* ---------- SERVICIOS ---------- */
+.servicios { padding: 2.5rem 0 4rem; }
+
+.servicios-encabezado {
+    max-width: 38rem;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+.servicios-encabezado h2 { margin-bottom: 0.8rem; }
+.servicios-encabezado p { font-size: 0.9rem; line-height: 1.7; }
+
+.servicios .columns { row-gap: 0.8rem; }
+
+.servicios .column { display: flex; }
+
+.servicio {
+    width: 100%;
+    padding: 0;
+    color: var(--crema);
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+.servicio:hover {
+    transform: translateY(-6px);
+    background: rgba(255, 255, 255, 0.11);
+    border-color: rgba(168, 197, 154, 0.45);
+}
+
+.servicio .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1.5rem 0;
+}
+
+.servicio .card-body { padding: 1.2rem 1.5rem 1.6rem; }
+
+.servicio .card-title {
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+.servicio .card-body p {
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.65;
+}
+
+.servicio-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    color: var(--musgo-claro);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--vidrio-borde);
+    border-radius: 50%;
+}
+.servicio-icono svg { width: 1.4rem; height: 1.4rem; }
+
+.servicio-numero {
+    font-family: var(--fuente-titulo);
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1;
+    color: rgba(244, 241, 232, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .servicio { transition: none; }
+    .servicio:hover { transform: none; }
 }
