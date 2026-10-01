@@ -351,3 +351,82 @@ html { scroll-padding-top: 6rem; }
     .servicio { transition: none; }
     .servicio:hover { transform: none; }
 }
+
+/* ---------- FORMULARIO DE RESERVA ---------- */
+:root { --error: #E8896B; }
+
+.reserva { padding: 2.5rem 0 5rem; }
+
+.reserva .columns { align-items: center; row-gap: 2rem; }
+.reserva h2 { margin-bottom: 1rem; }
+.reserva-intro { max-width: 26rem; font-size: 0.9rem; line-height: 1.7; }
+
+.reserva [hidden] { display: none !important; }
+
+.formulario { padding: 2rem; border-radius: 32px; }
+.formulario .columns { align-items: flex-start; row-gap: 0.4rem; }
+
+.reserva .form-label {
+    padding: 0.2rem 0;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--crema);
+}
+.reserva .opcional { font-weight: 400; color: var(--crema-suave); }
+
+.reserva .form-input {
+    height: auto;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.8rem;
+    color: var(--crema);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--vidrio-borde);
+    border-radius: 14px;
+    color-scheme: dark;
+}
+.reserva .form-input::placeholder { color: rgba(244, 241, 232, 0.4); }
+.reserva .form-input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--musgo-claro);
+    box-shadow: 0 0 0 0.1rem rgba(168, 197, 154, 0.25);
+}
+.reserva textarea.form-input { min-height: 6rem; resize: vertical; }
+
+.reserva .has-error .form-input {
+    background: rgba(232, 137, 107, 0.1);
+    border-color: var(--error);
+}
+.reserva .has-error .form-input-hint,
+.reserva .form-input-hint { margin-top: 0.3rem; font-size: 0.65rem; color: var(--error); }
+
+.reserva .btn.btn-primary {
+    height: auto;
+    margin-top: 0.6rem;
+    padding: 0.8rem 1.6rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--bosque);
+    background: var(--crema);
+    border-color: var(--crema);
+    border-radius: 999px;
+}
+.reserva .btn.btn-primary:hover,
+.reserva .btn.btn-primary:focus,
+.reserva .btn.btn-primary:active {
+    color: var(--bosque);
+    background: var(--ambar);
+    border-color: var(--ambar);
+    box-shadow: 0 0 0 0.15rem rgba(224, 169, 74, 0.35);
+}
+
+.reserva .toast.toast-success {
+    margin-top: 1rem;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--crema);
+    background: rgba(107, 143, 94, 0.25);
+    border: 1px solid rgba(168, 197, 154, 0.5);
+    border-radius: 14px;
+}
+.reserva .toast .btn-clear { color: var(--crema); }

@@ -201,37 +201,98 @@
             </div>
         </section>
 
-        <section id="reserva">
-            <h2>Planea tu próxima escapada</h2>
-            <p>
-                Cuéntanos cuándo quieres visitarnos y nos pondremos en contacto contigo
-                para confirmar disponibilidad.
-            </p>
+        <section id="reserva" class="reserva">
+            <div class="container grid-xl">
+                <div class="columns">
 
-            <form>
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" name="nombre">
+                    <div class="column col-5 col-md-12">
+                        <h2>Planea tu próxima escapada</h2>
+                        <p class="reserva-intro">
+                            Cuéntanos cuándo quieres visitarnos y nos pondremos en contacto contigo
+                            para confirmar disponibilidad.
+                        </p>
+                    </div>
 
-                <label for="correo">Correo electrónico</label>
-                <input type="email" id="correo" name="correo">
+                    <div class="column col-7 col-md-12">
+                        <form id="formulario-reserva" class="vidrio formulario">
+                            <div class="columns">
 
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono">
+                                <div class="column col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="nombre">Nombre completo</label>
+                                        <input class="form-input" type="text" id="nombre" name="nombre"
+                                               placeholder="Tu nombre" autocomplete="name" required>
+                                    </div>
+                                </div>
 
-                <label for="llegada">Fecha de llegada</label>
-                <input type="date" id="llegada" name="llegada">
+                                <div class="column col-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="correo">Correo electrónico</label>
+                                        <input class="form-input" type="email" id="correo" name="correo"
+                                               placeholder="nombre@correo.com" autocomplete="email" required>
+                                    </div>
+                                </div>
 
-                <label for="salida">Fecha de salida</label>
-                <input type="date" id="salida" name="salida">
+                                <div class="column col-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="telefono">Teléfono</label>
+                                        <input class="form-input" type="tel" id="telefono" name="telefono"
+                                               placeholder="300 000 0000" autocomplete="tel" required>
+                                    </div>
+                                </div>
 
-                <label for="huespedes">Número de huéspedes</label>
-                <input type="number" id="huespedes" name="huespedes" min="1">
+                                <div class="column col-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="llegada">Fecha de llegada</label>
+                                        <input class="form-input" type="date" id="llegada" name="llegada" required>
+                                    </div>
+                                </div>
 
-                <label for="mensaje">Mensaje o solicitud especial</label>
-                <textarea id="mensaje" name="mensaje" rows="4"></textarea>
+                                <div class="column col-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="salida">Fecha de salida</label>
+                                        <input class="form-input" type="date" id="salida" name="salida"
+                                               aria-describedby="error-fechas" required>
+                                        <p class="form-input-hint" id="error-fechas" hidden>
+                                            La salida debe ser después de la llegada.
+                                        </p>
+                                    </div>
+                                </div>
 
-                <button type="submit">Enviar solicitud</button>
-            </form>
+                                <div class="column col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="huespedes">Número de huéspedes</label>
+                                        <input class="form-input" type="number" id="huespedes" name="huespedes"
+                                               min="1" max="12" placeholder="Ej. 2" required>
+                                    </div>
+                                </div>
+
+                                <div class="column col-12">
+                                    <div class="form-group">
+                                        <label class="form-label" for="mensaje">
+                                            Mensaje o solicitud especial <span class="opcional">(opcional)</span>
+                                        </label>
+                                        <textarea class="form-input" id="mensaje" name="mensaje" rows="4"
+                                                  placeholder="Cuéntanos si celebras algo, tienes mascotas o alguna necesidad especial..."></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="column col-12">
+                                    <button type="submit" class="btn btn-primary btn-block">Enviar solicitud</button>
+
+                                    <div id="aviso-exito" class="toast toast-success" role="status" hidden>
+                                        <button type="button" id="cerrar-aviso" class="btn btn-clear float-right"
+                                                aria-label="Cerrar aviso"></button>
+                                        ¡Gracias! Recibimos tu solicitud y te contactaremos para confirmar disponibilidad.
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
     </main>
