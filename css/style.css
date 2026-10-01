@@ -562,3 +562,48 @@ html { scroll-padding-top: 6rem; }
     font-size: 0.7rem;
     text-align: center;
 }
+
+/* ---------- AJUSTES RESPONSIVE ---------- */
+
+.reserva .form-input[type="date"] {
+    min-width: 0;
+    min-height: 2.4rem;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+a:focus-visible,
+.btn:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--ambar);
+    outline-offset: 3px;
+}
+
+@media (max-width: 840px) {
+    .servicios { padding: 2rem 0 3rem; }
+    .reserva   { padding: 2rem 0 3rem; }
+    .experiencia-encabezado { margin-bottom: 2rem; }
+}
+
+@media (max-width: 600px) {
+    .container.grid-xl {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .barra { padding: 0.35rem 0.5rem 0.35rem 1.1rem; }
+
+    .hero .botones .btn { width: 100%; }
+
+    .marco-parallax,
+    .marco-comparador { padding: 0.4rem; border-radius: 24px; }
+    .marco-comparador .comparison-slider { border-radius: 18px; }
+
+    .formulario { padding: 1.25rem; border-radius: 24px; }
+    .pie-panel  { padding: 1.75rem 1.25rem 1.25rem; border-radius: 24px; }
+
+    .servicio .card-header { padding: 1.2rem 1.2rem 0; }
+    .servicio .card-body   { padding: 1rem 1.2rem 1.3rem; }
+
+    .pie .nav .nav-item a { padding: 0.45rem 0; }
+}
