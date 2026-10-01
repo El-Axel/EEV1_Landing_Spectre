@@ -73,7 +73,7 @@ body::before {
 /* ---------- EFECTO GLASS ---------- */
 .vidrio {
     background: var(--vidrio-fondo);
-    -webkit-backdrop-filter: blur(var(--vidrio-blur));  /* versión para Safari */
+    -webkit-backdrop-filter: blur(var(--vidrio-blur));
     backdrop-filter: blur(var(--vidrio-blur));
     border: 1px solid var(--vidrio-borde);
     border-radius: var(--radio);
@@ -479,3 +479,86 @@ html { scroll-padding-top: 6rem; }
 }
 .experiencia-notas p { margin: 0; font-size: 0.8rem; line-height: 1.6; }
 .experiencia-notas strong { color: var(--crema); }
+
+/* ---------- FOOTER ---------- */
+.pie { padding: 1rem 0 2rem; }
+
+.pie-panel {
+    padding: 2.5rem 2rem 1.5rem;
+    border-radius: 32px;
+}
+
+.pie .columns { row-gap: 2rem; }
+
+.pie-marca {
+    margin-bottom: 0.6rem;
+    font-family: var(--fuente-titulo);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--crema);
+}
+.pie-marca span { color: var(--musgo-claro); }
+
+.pie-texto {
+    max-width: 18rem;
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.7;
+}
+
+.pie-titulo {
+    margin-bottom: 0.8rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ambar);
+}
+
+.pie .nav { margin: 0; }
+.pie .nav .nav-item a {
+    padding: 0.25rem 0;
+    font-size: 0.8rem;
+    color: var(--crema-suave);
+}
+.pie .nav .nav-item a:hover,
+.pie .nav .nav-item a:focus {
+    color: var(--ambar);
+    text-decoration: none;
+}
+
+.pie-contacto {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.pie-contacto li {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0 0 0.7rem;
+    font-size: 0.8rem;
+    color: var(--crema-suave);
+}
+.pie-contacto li:last-child { margin-bottom: 0; }
+.pie-contacto svg {
+    flex-shrink: 0;
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--musgo-claro);
+}
+.pie-contacto a {
+    color: var(--crema-suave);
+    overflow-wrap: anywhere;
+}
+.pie-contacto a:hover,
+.pie-contacto a:focus { color: var(--ambar); }
+
+.pie .divider {
+    margin: 2rem 0 1rem;
+    border-top-color: var(--vidrio-borde);
+}
+.pie-copy {
+    margin: 0;
+    font-size: 0.7rem;
+    text-align: center;
+}
